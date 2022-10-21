@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SuveryForm</title>
+	<link rel="stylesheet" type="text/css" href="SurveyForm.css">
+</head>
+<body>
+	<main>
+		<h1 id="title">健康状况日常上报</h1>
+
+		<p id="description">为了做好新型肺炎疫情防控工作，希望您及时填写本次身体健康状况调查问卷，感谢您的参与！</p>
+	
+		<form id="survey-form">
+	
+			<div class="input">
+				<label id="name-label" for="name">您的姓名：</label>
+				<input id="name" type="text" name="" required="" placeholder="张三">
+			</div>
+	
+			<div class="input">
+				<label id="email-label" for="email">您的邮箱：</label>
+				<input id="email" type="email" name="" required="" placeholder="example@qq.com">
+			</div>
+	
+			<div class="input">
+				<label id="number-label" for="number">您的年龄：</label>
+				<input id="number" type="number" name="" min="0" max="120" placeholder="18">
+			</div>
+	
+			<div>
+				<label for="dropdown">目前所在地是：</label>
+				<select id="dropdown">
+					<option selected>---</option>
+					<option>东城区</option>
+					<option>西城区</option>
+					<option>朝阳区</option>
+					<option>丰台区</option>
+					<option>石景山区</option>
+					<option>其他</option>
+				</select>
+			</div>
+	
+			<div class="input">
+				<label for="street">所在街道详细地址：</label>
+				<input id="street" type="text" name="" placeholder="xxx街道xxx号">
+			</div>
+	
+			<div class="radio">
+				<p>目前的健康状况</p>
+				<input type="radio" name="health" value="health" id="health">
+				<label for="health">身体健康</label>
+				<input type="radio" name="health" value="unhealth" id="unhealth">
+				<label for="unhealth">身体不适</label>
+			</div>
+	
+			<div>
+				<p>当前的症状是（可多选）</p>
+				<div class="checkbox">
+					<!-- (div>(input[type=checkbox name=symptom value=$]#symptom$+label[for=symptom$]))*18 -->
+					<div><input type="checkbox" name="symptom" value="1" id="symptom1"><label for="symptom1">发热</label></div>
+					<div><input type="checkbox" name="symptom" value="2" id="symptom2"><label for="symptom2">咳嗽</label></div>
+					<div><input type="checkbox" name="symptom" value="3" id="symptom3"><label for="symptom3">流鼻涕</label></div>
+					<div><input type="checkbox" name="symptom" value="4" id="symptom4"><label for="symptom4">咽痛</label></div>
+					<div><input type="checkbox" name="symptom" value="5" id="symptom5"><label for="symptom5">嗓子哑</label></div>
+					<div><input type="checkbox" name="symptom" value="6" id="symptom6"><label for="symptom6">鼻子痒、干</label></div>
+					<div><input type="checkbox" name="symptom" value="7" id="symptom7"><label for="symptom7">打喷嚏</label></div>
+					<div><input type="checkbox" name="symptom" value="8" id="symptom8"><label for="symptom8">鼻塞</label></div>
+					<div><input type="checkbox" name="symptom" value="9" id="symptom9"><label for="symptom9">哮喘</label></div>
+					<div><input type="checkbox" name="symptom" value="10" id="symptom10"><label for="symptom10">呼吸困难</label></div>
+					<div><input type="checkbox" name="symptom" value="11" id="symptom11"><label for="symptom11">眼红、疼、痒</label></div>
+					<div><input type="checkbox" name="symptom" value="12" id="symptom12"><label for="symptom12">头痛</label></div>
+					<div><input type="checkbox" name="symptom" value="13" id="symptom13"><label for="symptom13">乏力、嗜睡</label></div>
+					<div><input type="checkbox" name="symptom" value="14" id="symptom14"><label for="symptom14">抽搐</label></div>
+					<div><input type="checkbox" name="symptom" value="15" id="symptom15"><label for="symptom15">呕吐</label></div>
+					<div><input type="checkbox" name="symptom" value="16" id="symptom16"><label for="symptom16">腹痛</label></div>
+					<div><input type="checkbox" name="symptom" value="17" id="symptom17"><label for="symptom17">腹泻</label></div>
+					<div><input type="checkbox" name="symptom" value="18" id="symptom18"><label for="symptom18">肌痛、关节痛</label></div>
+				</div>
+			</div>
+	
+			<div class="switch">
+				<p>近14天是否在高风险地区停留或路过，接触过来自高风险地区的人员</p>
+				<input type="checkbox" name="risk" value="no" id="risk">
+				<label for="risk"></label>
+			</div>
+	
+			<div class="switch">
+				<p>是否接触过疑似或确诊的新冠肺炎患者</p>
+				<input type="checkbox" name="touch" value="no" id="touch">
+				<label for="touch"></label>
+			</div>
+	
+			<div class="input">
+				<label for="phone-number">监护人联系电话是：</label>
+				<input id="phone-number" type="text" name="phone-number">
+			</div>
+	
+			<div>
+				<p>其他补充</p>
+				<textarea placeholder="您的补充" spellcheck="false"></textarea>
+			</div>
+	
+	
+			<div class="btn">
+				<button id="submit">提交</button>
+			</div>
+		</form>
+	</main>
+</body>
+</html>

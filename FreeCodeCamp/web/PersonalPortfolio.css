@@ -1,0 +1,165 @@
+/*
+* @Author: vane
+* @Date:   2021-03-30 16:57:16
+* @Last Modified by:   vane
+* @Last Modified time: 2021-03-30 22:52:37
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.navbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #82ccdd;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.navbar a {
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+	color: white;
+}
+
+.navbar a:hover {
+	transition: all 0.3s;
+	background-color: #3c6382;
+}
+
+.welcome {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #60a3bc;
+	background-image: linear-gradient(to top, #3c6382, #60a3bc);
+}
+
+.welcome>p {
+	color: #82ccdd;
+}
+
+.welcome>img {
+	display: block;
+	border-radius: 50%;
+	width: 8rem;
+}
+
+.welcome>img:hover {
+	transition: all 2s;
+	transform: rotateY(360deg);
+}
+
+.projects {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #3c6382;
+	background-image: linear-gradient(to top, #0a3d62, #3c6382);
+}
+
+.projects>h2 {
+	font-size: 2.2rem;
+	border-bottom: 1px solid white;
+	padding-bottom: .2rem;
+	margin-bottom: 2rem;
+}
+
+main>.projects>.project-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	text-align: center;
+	align-items: center;
+	font-family: monospace;
+}
+
+.project-items a {
+	display: block;
+	background-color: #303841;
+	margin-bottom: 2em;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+}
+
+.project-items img {
+	display: block;
+	width: 45vw;
+}
+
+.project-items span {
+	transition: all 1s;
+	color: transparent;
+}
+
+.project-items a:hover span {
+	color: #fa983a;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #0a3d62;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.contact h2 {
+	font-size: 3rem;
+	margin-bottom: -0.2em;
+}
+
+.contact>.contact-links {
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+	padding: 3em;
+	font-size: 1.5em;
+	flex-wrap: wrap;
+}
+
+.contact-links a {
+	text-decoration: none;
+	color: white;
+}
+
+.contact-links a:hover {
+	transition: all 0.5s;
+	transform: translate(0, 0.5em);
+}
+
+footer {
+	display: flex;
+	justify-content: flex-end;
+	background-color: #0a3d62;
+}
+
+footer p {
+	margin-right: 2em;
+}
+
+@media (max-width: 800px) {
+	main>.projects>.project-items {
+		display: flex;
+		flex-direction: column;
+	}
+	.project-items img {
+		display: block;
+		width: 90vw;
+	}
+}

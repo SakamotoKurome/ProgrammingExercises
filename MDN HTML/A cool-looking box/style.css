@@ -1,0 +1,23 @@
+html {
+  font-family: sans-serif;
+}
+
+/* Your CSS below here */
+p {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  margin-top: -76px;
+  line-height: 150px;
+  text-align: center;
+  font-size: 1.1rem; /** 1. 通过在 <html> 添加 font-size,测得为 16px；2. 在 Firefox 浏览器设置中可以看到默认字体大小 **/
+  color: white;
+  text-shadow:  2px 2px 2px black;
+  border-radius: 10px;
+  border: 1px solid #b01414;
+  background: red linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%);
+  box-shadow: 4px 4px 8px black, inset 2px 2px 8px white, inset -1px -1px 8px black;
+  left: 50%;
+  margin-left: -101px;
+}

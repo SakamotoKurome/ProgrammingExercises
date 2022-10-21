@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Loops: Task 3</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+</body>
+<script>
+    let i = 500;
+    const para = document.createElement('p');
+
+    // 奇数与平方根优化的暴力筛法
+    function isPrime(num) {
+        if (num % 2 === 0) return false;
+        for (let i = 2; i * i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // Add your code here
+
+    // Euler Sieve（欧拉筛法）
+    function eulerSieve(n) {
+        let primesOfN = [];
+        let cnt = 0;
+        let isPrimeOfN = Array(n + 1).fill(true);
+        isPrimeOfN[0] = isPrimeOfN[1] = false
+        // 外层是倍数循环
+        for (let i = 2; i < n + 1; i++) {
+            if (isPrimeOfN[i]) {
+                primesOfN[cnt] = i
+                cnt += 1
+            }
+            // 内层是素数循环
+            for (let j = 0; j < cnt; j++) {
+                isPrimeOfN[primesOfN[j] * i] = false;
+                // 如果某个数可以被4因子分解，那么必然能够被2质因子分解
+                if (i % primesOfN[j] === 0) {
+                    break;
+                }
+            }
+        }
+        return primesOfN;
+    }
+    para.textContent = eulerSieve(500).join(', ')
+    // Don't edit the code below here!
+    const section = document.querySelector('section');
+    section.appendChild(para);
+</script>
+
+</html>

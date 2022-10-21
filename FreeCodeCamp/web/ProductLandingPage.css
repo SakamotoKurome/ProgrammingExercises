@@ -1,0 +1,152 @@
+/*
+* @Author: vane
+* @Date:   2021-03-29 22:10:31
+* @Last Modified by:   vane
+* @Last Modified time: 2021-03-30 13:51:20
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	/* background-image: url(/home/vane/Documents/Git/Pirctures/包子头.png); */
+	/* background-size: cover; */
+	background-color: white; 
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3rem;
+	width: 100%;
+	background-color: black;
+	z-index: 1;
+}
+
+header>a>img {
+	height: 100%;
+}
+
+nav>a {
+	display: inline-block;
+	padding: 0 0.5rem;
+	height: 100%;
+	line-height: 3rem;
+	text-decoration: none;
+	color: white;
+}
+
+nav>a:hover {
+	color: black;
+	background-color: white;
+}
+
+.main-message {
+	margin-top: 3rem;
+	box-sizing: border-box;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@keyframes slide {
+	0% {
+		top: 0;
+	}
+	20% {
+		top: -33vw;
+	}
+	40% {
+		top: -66vw;
+	}
+	60% {
+		top: -99vw;
+	}
+	80% {
+		top: -132vw;
+	}
+	100% {
+		top: -165vw;
+	}
+}
+
+.box {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imgBox {
+	width: 60vw;
+	height: 33vw;
+	overflow: hidden;
+	position: relative;
+}
+
+.imgBox>ul {
+	list-style: none;
+	position: absolute;
+	animation: slide 20s infinite;
+}
+
+.imgBox img {
+	height: 33vw;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	height: 8rem;
+	justify-content: space-around;
+	align-items: center;
+}
+
+label[for="submit"] {
+	padding: 0.3rem;
+	border-radius: 0.2rem;
+	font-size: 14px;
+	border: 1px solid black;
+}
+
+label[for="submit"]:hover {
+	background-color: cornflowerblue;
+}
+
+.video {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+video {
+	width: 60vw;
+	margin: 0 auto;
+}
+
+footer {
+	width: 100%;
+	height: 3rem;
+	background-color: black;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	color: white;
+}
+
+@media (max-width: 500px) {
+	h1 {
+		padding: 1.5rem;
+	}
+
+}

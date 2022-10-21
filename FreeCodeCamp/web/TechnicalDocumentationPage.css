@@ -1,0 +1,84 @@
+/*
+* @Author: vane
+* @Date:   2021-03-30 14:27:16
+* @Last Modified by:   vane
+* @Last Modified time: 2021-03-30 16:21:52
+*/
+body {
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+.navbar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 25vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	overflow: auto;
+}
+
+.navbar p {
+	text-align: left;
+	text-indent: 2em;
+}
+
+.navbar a {
+	display: block;
+	text-decoration: none;
+	height: 4vh;
+	padding: 1rem 2rem;
+	border-top: 1px dotted black;
+	color: #2f3542;
+}
+
+.navbar a:hover {
+	transition: all 0.3s;
+	background-color: #dfe4ea;
+}
+
+.navbar a:last-child:hover {
+	background-color: initial;
+}
+
+.main-doc {
+	margin-left: 30vw;
+	margin-right: 5vw;
+}
+
+.main-doc code {
+	display: block;
+	padding: 0 1rem;
+	background-color: #dfe4ea;
+	border-radius: 5px;
+	font-family: monospace;
+	overflow: auto;
+}
+
+@media (max-width: 850px) {
+	.navbar {
+		position: initial;
+		left: initial;
+		top: initial;
+		width: auto;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		overflow: initial;
+	}
+	.main-doc {
+		margin-left: initial;
+		margin-right: initial;
+		width: auto;
+		height: auto;
+	}
+}

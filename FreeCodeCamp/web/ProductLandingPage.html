@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="ProductLandingPage.css">
+</head>
+
+<body>
+	<header id="header">
+		<a href="#" title="回到顶部"><img id="header-img" src="/home/vane/Documents/Git/Pirctures/包子头.png" alt="包子头像"></a>
+		<nav id="nav-bar">
+			<a class="nav-link" href="#form">获取秘籍</a>
+			<a class="nav-link" href="#imgs">看图片</a>
+			<a class="nav-link" href="#video">看视频</a>
+		</nav>
+	</header>
+
+	<main>
+		<div class="main-message">
+			<h1>店里卖 58 一只的包子王，自己在家做，你猜能省多少钱？</h1>
+
+			<form id="form" action="https://www.freecodecamp.com/email-submit">
+				<label for="email">
+					<b>输入你的邮箱，订阅更多料理秘籍！</b>
+				</label>
+				<input id="email" type="email" name="email" placeholder="example@qq.com" required="">
+
+				<input id="submit" type="submit" name="" value="" hidden>
+				<label for="submit">确认订阅</label>
+			</form>
+		</div>
+
+
+		<div class="box">
+			<div id="imgs" class="imgBox">
+				<ul>
+					<li><img alt="包子图片" src="/home/vane/Documents/Git/Pirctures/做好的包子.png"></li>
+					<li><img alt="包子图片" src="/home/vane/Documents/Git/Pirctures/撕包子.png"></li>
+					<li><img alt="包子图片" src="/home/vane/Documents/Git/Pirctures/开包子.png"></li>
+					<li><img alt="包子图片" src="/home/vane/Documents/Git/Pirctures/干包子.png"></li>
+					<li><img alt="包子图片" src="/home/vane/Documents/Git/Pirctures/蒸好的包子.png"></li>
+					<li><img alt="包子图片" src="/home/vane/Documents/Git/Pirctures/展包子.png"></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="video">
+			<video id="video" controls="" poster="/home/vane/Documents/Git/Pirctures/图文菜谱.jpg">
+				<source src="https://www.bilibili.com/video/BV1cb4y1X7mX" type="video/mp4">
+				<p>如果不支持 HTML5 视频，请在<a href="https://www.bilibili.com/video/BV1cb4y1X7mX">哔哩哔哩</a>观看</p>
+			</video>
+		</div>
+
+	</main>
+
+	<footer id="footer">
+		<p>自己做的包子王！</p>
+	</footer>
+</body>
+
+</html>

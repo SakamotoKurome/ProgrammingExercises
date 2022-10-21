@@ -1,0 +1,82 @@
+/*
+* @Author: vane
+* @Date:   2021-03-29 13:02:29
+* @Last Modified by:   vane
+* @Last Modified time: 2021-03-29 16:14:04
+*/
+
+@import url('https://fonts.font.im/css?family=Dancing+Script');
+
+body {
+	text-align: center;
+	color: black;
+	font-family: 'Dancing Script', cursive;
+	font-size: 1.3rem;
+}
+
+article {
+	width: 210mm;
+	height: 297mm;
+	margin: 50px auto;
+	padding: 2em 2em;
+}
+
+.paper {
+	position: relative;
+	border: 1px solid #efefef;
+	background-color: #fffffd;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27);
+	background-image: url(/home/vane/Documents/Git/Pirctures/paper.png);
+}
+
+.paper::before, .paper::after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	width: 45%;
+	height: 55%;
+	max-height: 100px;
+	box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+	transform: skew(-15deg) rotate(-4deg);
+}
+.paper::after {
+	left: initial; 
+	right: 20px;
+	transform: skew(15deg) rotate(4deg);
+}
+
+figcaption {
+	margin-bottom: 0.5em;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+section {
+	text-align: initial;
+	text-indent: 2em;
+	padding: 1em;
+}
+
+p:last-child {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color:red;
+}
+
+a:visited {
+	color: red;
+}

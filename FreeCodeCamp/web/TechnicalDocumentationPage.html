@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="TechnicalDocumentationPage.css">
+</head>
+
+<body>
+	<nav id="navbar" class="navbar">
+		<header>
+			<h1>CSS Basics</h1>
+			<p>层叠样式表（Cascading Style Sheet，简称：CSS）是为网页添加样式的代码。本节将介绍 CSS
+				的基础知识，并解答类似问题：怎样将文本设置为黑色或红色？怎样将内容显示在屏幕的特定位置？怎样用背景图片或颜色来装饰网页？</p>
+		</header>
+		<a href="#What_is_CSS" class="nav-link">What is CSS</a>
+		<a href="#Fonts_and_text" class="nav-link">Fonts and text</a>
+		<a href="#CSS_all_about_boxes" class="nav-link">CSS all about boxes</a>
+		<a href="#Conclusion" class="nav-link">Conclusion</a>
+		<a href="#In_this_module" class="nav-link">In this module</a>
+		<!-- 最后一个显示不出来，不知道为什么 -->
+		<a href="#In_this_module" class="nav-link"></a>
+	</nav>
+	<main id="main-doc" class="main-doc">
+		<section id="What_is_CSS" class="main-section">
+			<header>
+				<h2>What is CSS</h2>
+			</header>
+			<p>和 HTML 类似，CSS 也不是真正的编程语言，甚至不是标记语言。它是一门样式表语言，这也就是说人们可以用它来选择性地为 HTML 元素添加样式。举例来说，要选择一个 HTML
+				页面里所有的段落元素，然后将其中的文本改成红色，可以这样写 CSS：</p>
+			<pre>
+				<code>
+p {
+	color: red;
+}
+			  </code>
+			</pre>
+			<p>不妨试一下：首先新建一个 styles 文件夹，在其中新建一个 style.css 文件，将这三行 CSS 保存在这个新文件中。</p>
+			<p>后再将该 CSS 文件连接至 HTML 文档，否则 CSS 代码不会对 HTML 文档在浏览器里的显示效果有任何影响。（如果你没有完成前几节的实践，请复习 处理文件 和 HTML 基础。）</p>
+			<ol>
+				<li>
+					<p>打开 index.html 文件，然后将下面一行粘贴到文档头（也就是
+
+						<head> 和 </head> 标签之间）。
+					</p>
+					<pre>
+						<code>
+&lt;link href="styles/style.css" rel="stylesheet"&gt;
+						</code>
+					</pre>
+				</li>
+				<li>
+					保存 index.html 并用浏览器将其打开。
+				</li>
+			</ol>
+			<p>如果段落文字变红，那么祝贺你，你已经成功地迈出了 CSS 学习的第一步。</p>
+		</section>
+		<section id="Fonts_and_text" class="main-section">
+			<header>
+				<h2>Fonts and text</h2>
+			</header>
+			<p>在探索了一些 CSS 基础后，我们来把更多规则和信息添加至 style.css 中，从而让示例更美观。首先，让字体和文本变得更漂亮。</p>
+			<ol>
+				<li>
+					<p>第一步，找到之前 Google Font 输出的地址。并以 &lt;link&gt; 元素的形式添加进 index.html 文档头（ &lt;head&gt; 和 &lt;/head&gt;
+						之间的任意位置）。代码如下： </p>
+					<pre>
+						<code>
+&lt;link href="https://fonts.font.im/css?family=Open+Sans" rel="stylesheet" type="text/css"&gt;
+						</code>
+					</pre>
+				</li>
+				<li>
+					<p>接下来，删除 style.css 文件中已有的规则。虽然测试是成功的了，但是红字看起来并不太舒服。</p>
+				</li>
+				<li>
+					<p>将下列代码添加到相应的位置，用你在 Google Fonts 找到的字体替代 font-family 中的占位行。（ font-family
+						意味着你想要你的文本使用的字体。）这条规则首先为整个页面设定了一个全局字体和字号（因为 &lt;html&gt; 是整个页面的父元素，而且它所有的子元素都会继承相同的 font-size 和
+						font-family）：</p>
+					<pre>
+						<code>
+html {
+	/* px 表示 “像素（pixels）”: 基础字号为 10 像素 */
+	font-size: 10px;
+	/* Google fonts 输出的 CSS */
+	font-family: 'Open Sans', sans-serif;
+}
+				  		</code>
+					</pre>
+				</li>
+			</ol>
+		</section>
+		<section id="CSS_all_about_boxes" class="main-section">
+			<header>
+				<h2>CSS all about boxes</h2>
+			</header>
+			<p>编写 CSS 时你会发现，你的工作好像是围绕着一个一个盒子展开的——设置尺寸、颜色、位置，等等。页面里大部分 HTML 元素都可以被看作若干层叠的盒子。</p>
+			<p>并不意外，CSS 布局主要就是基于盒模型的。每个占据页面空间的块都有这样的属性：</p>
+			<ul>
+				<li>
+					padding：即内边距，围绕着内容（比如段落）的空间。
+				</li>
+				<li>
+					border：即边框，紧接着内边距的线。
+				</li>
+				<li>
+					margin：即外边距，围绕元素外部的空间。
+				</li>
+			</ul>
+			<p>这里还使用了：</p>
+			<ul>
+				<li>width ：元素的宽度</li>
+				<li>background-color ：元素内容和内边距底下的颜色</li>
+				<li>color ：元素内容（通常是文本）的颜色</li>
+				<li>text-shadow ：为元素内的文本设置阴影</li>
+				<li>display ：设置元素的显示模式（暂略）</li>
+			</ul>
+			<p>开始在页面中添加更多 CSS 吧！大胆将这些新规则都添加到页面的底部，而不要纠结改变属性值会带来什么结果。</p>
+			<h3>更改页面颜色</h3>
+			<pre>
+				<code>
+html {
+	background-color: #00539F;
+}			
+				</code>
+			</pre>
+			<p>这条规则将整个页面的背景颜色设置为 所计划的颜色。</p>
+		</section>
+		<section id="Conclusion" class="main-section">
+			<header>
+				<h2>Conclusion</h2>
+			</header>
+			<p>如果你按部就班完成本文的实践，那么最终可以得到以下页面（可以 查看我们的版本）：</p>
+			<p>若遇到问题，可以参考 GitHub 上的 完整示例代码 做对比。</p>
+			<p>本章介绍的 CSS 知识非常有限，更多内容请访问 CSS学习页面。</p>
+		</section>
+		<section id="In_this_module" class="main-section">
+			<header>
+				<h2>In this module</h2>
+			</header>
+			<ul>
+				<li>安装基础软件</li>
+				<li>设计网站的外观</li>
+				<li>处理文件</li>
+				<li>HTML 基础</li>
+				<li>CSS 基础</li>
+				<li>JavaScript 基础</li>
+				<li>发布网站</li>
+				<li>Web 是如何运作的</li>
+			</ul>
+		</section>
+	</main>
+</body>
+
+</html>

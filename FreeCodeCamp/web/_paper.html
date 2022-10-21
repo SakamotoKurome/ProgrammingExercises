@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 纸页效果 https://qishaoxuan.github.io/css_tricks/paper/
+        * 页脚并没有实际卷起来，通过阴影，制造页脚卷起来的视觉错觉
+        */
+        .paper {
+            width: 500px;
+            position: relative;
+            margin: 30px auto;
+            padding: 30px 0;
+            border: 1px solid #efefef;
+            background-color: #fffffd;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+        }
+        .paper::before, .paper::after {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 45%;
+            height: 55%;
+            max-height: 100px;
+            /* 关键 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: skew(-15deg) rotate(-4deg);
+        }
+        .paper::after {
+            /* auto 为 left 初始值。这时 bottom 10px， right 10px，定位点为右下角，参考点也是右下角 */
+            left: auto; 
+            right: 10px;
+            transform: skew(15deg) rotate(4deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="paper">
+
+    </div>
+</body>
+</html>
