@@ -29,7 +29,7 @@ public class BinarySearch {
     }
 
     // list 转 int 数组
-    public static int[] convertIntegers(List<Integer> integers) {
+    public static int[] convertArrayListToIntegers(List<Integer> integers) {
         int[] ret = new int[integers.size()];
         Iterator<Integer> iterator = integers.iterator();
         for (int i = 0; i < ret.length; i++) {
@@ -49,7 +49,7 @@ public class BinarySearch {
             // 从小到大排序
             Collections.sort(allowlist);
             // 转换为数组
-            int[] allowlist_c = convertIntegers(allowlist);
+            int[] allowlist_c = convertArrayListToIntegers(allowlist);
             // 在有序列表中查找命令行余下的数字
             for (int i = 1; i < args.length; i++) {
                 int key = Integer.parseInt(args[i]);
