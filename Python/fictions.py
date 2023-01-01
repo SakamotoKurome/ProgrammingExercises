@@ -31,7 +31,7 @@ def get_fictions(page):  # 获取某一页中的所有小说信息
             '小吾君' in fiction_author or '黄连苦寒' in fiction_author or \
                 '绝歌' in fiction_author or '沐枫轻年' in fiction_author or \
                 '请君莫笑' in fiction_author or '八千岁' in fiction_author or \
-                '雁过吾痕' in fiction_author:
+                '雁过吾痕' in fiction_author or '时微月上' in fiction_author :
             print(fiction_name)
             download_fiction(fiction.get('href'))
 

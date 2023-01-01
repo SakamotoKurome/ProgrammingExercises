@@ -100,8 +100,14 @@ def download_wallpaper(wallpaper_url):
     sys.stdout.write('\r100%\n')
     sys.stdout.flush()
     f_obj.close()
-    set_gnome_wallpaper(wallpaper_name)
-    set_kde_wallpaper(wallpaper_name)
+    try:
+        set_gnome_wallpaper(wallpaper_name)
+    except:
+        print('Setting gnome wallpaper failde')
+    try:
+        set_kde_wallpaper(wallpaper_name)
+    except:
+        print('Setting kde wallpaper failed')
 
 
 # 获取某页 favorites 最多的壁纸
