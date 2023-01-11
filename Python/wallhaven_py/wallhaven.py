@@ -7,6 +7,7 @@ import pprint
 import time
 import sys
 import dbus
+from ksetwallpaper import setwallpaper, set_lockscreen_wallpaper
 
 
 # 随机字符串
@@ -21,7 +22,7 @@ class WallhavenAPI:
                  baseurl='https://wallhaven.cc/api/v1/search',
                  apikey='',
                  categories='111',
-                 purity='111',
+                 purity='110',
                  sorting='random',
                  ratios='16x9'):
         self.baseurl = baseurl
@@ -34,21 +35,17 @@ class WallhavenAPI:
 
     def get_url(self):
         if self.apikey != '':
-            return f'{self.baseurl}?\
-                apikey={self.apikey}&\
-                    categories={self.categories}&\
-                        purity={self.purity}&\
-                            sorting={self.sorting}&\
-                                ratios={self.ratios}&\
-                                    page=1&\
-                                        seed={self.seed}'
+            apikey = f'apikey={self.apikey}&'
         else:
-            return f'{self.baseurl}?\
-                categories={self.categories}&\
+            apikey = ''
+        return f'{self.baseurl}?\
+                    {apikey}\
+                    categories={self.categories}&\
                     purity={self.purity}&\
-                        sorting={self.sorting}&\
-                            ratios={self.ratios}&\
-                                page=1&seed={self.seed}'
+                    sorting={self.sorting}&\
+                    ratios={self.ratios}&\
+                    page=1&\
+                    seed={self.seed}'
 
 
 # 设置 Gnome 壁纸
@@ -62,25 +59,10 @@ def set_gnome_wallpaper(wallpaper_name):
 
 
 # 设置 KDE 壁纸
-def setwallpaper(filepath, plugin='org.kde.image'):
-    jscript = """
-    var allDesktops = desktops();
-    print (allDesktops);
-    for (i=0;i<allDesktops.length;i++) {
-        d = allDesktops[i];
-        d.wallpaperPlugin = "%s";
-        d.currentConfigGroup = Array("Wallpaper", "%s", "General");
-        d.writeConfig("Image", "file://%s")
-    }
-    """
-    bus = dbus.SessionBus()
-    plasma = dbus.Interface(bus.get_object(
-        'org.kde.plasmashell', '/PlasmaShell'), dbus_interface='org.kde.PlasmaShell')
-    plasma.evaluateScript(jscript % (plugin, plugin, filepath))
-
-
 def set_kde_wallpaper(wallpaper_name):
-    setwallpaper(os.path.realpath(wallpaper_name))
+    wallpaper = os.path.realpath(wallpaper_name)
+    setwallpaper(wallpaper)
+    set_lockscreen_wallpaper(wallpaper)
 
 
 def download_wallpaper(wallpaper_url):
