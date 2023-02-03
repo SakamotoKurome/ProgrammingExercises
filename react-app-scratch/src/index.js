@@ -9,9 +9,15 @@ import Reservation from "./Reservation.js";
 import NameForm from "./NameForm.js";
 import FileInput from "./FileInput.js";
 import Calculator from "./Calculator.js";
+import ModalTest from "./Modal.js";
+import CustomTextInput from "./CustomTextInput.js";
+import MouseTracker from "./MouseTracker.js";
 
 ReactDOM.render(
   <>
+    <MouseTracker />
+    <CustomTextInput />
+    <ModalTest />
     <Calculator />
     <FileInput />
     <NameForm />
